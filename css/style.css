@@ -170,3 +170,101 @@ footer {
   font-size: 0.9rem;
 }
 footer strong { color: var(--gold-light); }
+
+/* Menu */
+.menu { padding: 4rem 0; background: var(--bg-alt); }
+.menu h2 { text-align: center; font-size: 2rem; margin-bottom: 1.5rem; }
+
+.menu-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 2.5rem;
+}
+
+.tab-btn {
+  background: transparent;
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  color: var(--text-dim);
+  padding: 0.5rem 1.1rem;
+  border-radius: 999px;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.tab-btn:hover { border-color: var(--gold); color: var(--gold-light); }
+.tab-btn.active {
+  background: linear-gradient(135deg, var(--gold), var(--gold-light));
+  border-color: transparent;
+  color: #1a1204;
+  font-weight: 600;
+}
+
+.menu-panel { display: none; }
+.menu-panel.active { display: block; animation: fadeIn 0.25s ease; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+.menu-panel h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.25rem;
+}
+.menu-panel .category-note {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.menu-item {
+  padding: 0.9rem 0;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+}
+.menu-item:last-child { border-bottom: none; }
+
+.menu-item-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.menu-item-name {
+  font-weight: 600;
+  color: var(--text);
+}
+.menu-item-no {
+  color: var(--gold);
+  font-weight: 700;
+  margin-right: 0.4rem;
+}
+.menu-item-tag {
+  display: inline-block;
+  background: #7a1f1f;
+  color: #ffe4e4;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+  margin-left: 0.4rem;
+  vertical-align: middle;
+}
+
+.menu-item-price {
+  color: var(--gold-light);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.menu-item-desc {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+}
+
+.menu-allergen-note {
+  margin-top: 2rem;
+  text-align: center;
+  color: var(--text-dim);
+  font-size: 0.8rem;
+}
