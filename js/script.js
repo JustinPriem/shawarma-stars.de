@@ -1,5 +1,22 @@
 // js/script.js
-// Wird in späteren Tasks befüllt: Menü-Tab-Filter, Hamburger-Nav, Sticky-Header-Schatten.
 document.addEventListener('DOMContentLoaded', () => {
-  console.log('STARS website loaded');
+  initMenuTabs();
 });
+
+function initMenuTabs() {
+  const tabButtons = document.querySelectorAll('.tab-btn');
+  const panels = document.querySelectorAll('.menu-panel');
+
+  tabButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const targetId = btn.getAttribute('data-target');
+
+      tabButtons.forEach((b) => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      panels.forEach((panel) => {
+        panel.classList.toggle('active', panel.id === targetId);
+      });
+    });
+  });
+}
