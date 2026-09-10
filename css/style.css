@@ -268,3 +268,40 @@ footer strong { color: var(--gold-light); }
   color: var(--text-dim);
   font-size: 0.8rem;
 }
+
+/* Hours */
+.hours { padding: 4rem 0; }
+.hours h2 { text-align: center; margin-bottom: 0.5rem; }
+.hours-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.hours-card {
+  background: var(--bg-alt);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+.hours-card h3 { font-size: 1.1rem; margin-bottom: 1rem; }
+.hours-card dl { display: grid; grid-template-columns: auto 1fr; gap: 0.4rem 1rem; }
+.hours-card dt { color: var(--text-dim); }
+.hours-card dd { text-align: right; font-weight: 600; }
+.hours-card .closed { color: #c96a6a; }
+
+.min-order {
+  margin-top: 2rem;
+  background: var(--bg-alt);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+.min-order h3 { font-size: 1.1rem; margin-bottom: 0.75rem; }
+.min-order ul { list-style: none; color: var(--text-dim); }
+.min-order li { padding: 0.25rem 0; }
+.min-order strong { color: var(--gold-light); }
+
+@media (max-width: 700px) {
+  .hours-grid { grid-template-columns: 1fr; }
+}
