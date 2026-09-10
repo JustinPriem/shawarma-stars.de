@@ -1,6 +1,8 @@
 // js/script.js
 document.addEventListener('DOMContentLoaded', () => {
   initMenuTabs();
+  initMobileNav();
+  initStickyHeader();
 });
 
 function initMenuTabs() {
@@ -18,5 +20,32 @@ function initMenuTabs() {
         panel.classList.toggle('active', panel.id === targetId);
       });
     });
+  });
+}
+
+function initMobileNav() {
+  const toggle = document.getElementById('nav-toggle');
+  const nav = document.getElementById('main-nav');
+  if (!toggle || !nav) return;
+
+  toggle.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('nav-open');
+    toggle.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  nav.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      nav.classList.remove('nav-open');
+      toggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+}
+
+function initStickyHeader() {
+  const header = document.getElementById('top');
+  if (!header) return;
+
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 10);
   });
 }

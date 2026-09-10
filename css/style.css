@@ -331,3 +331,29 @@ footer strong { color: var(--gold-light); }
 @media (max-width: 700px) {
   .contact-grid { grid-template-columns: 1fr; }
 }
+
+/* Sticky header shadow */
+#top.scrolled { box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4); }
+
+/* Mobile nav */
+@media (max-width: 768px) {
+  #main-nav {
+    position: fixed;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: var(--bg);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.25s ease;
+  }
+  #main-nav.nav-open { max-height: 300px; }
+  #main-nav ul {
+    flex-direction: column;
+    padding: 1rem 1.25rem;
+    gap: 1rem;
+  }
+  #nav-toggle { display: inline-block; }
+  .header-inner .btn-primary { display: none; }
+}
